@@ -41,6 +41,7 @@ _loadPixelInfo:
 
   push esi
   call _puts
+  add esp, 4
 
 	;push 0                 ; hTemplateFile = NULL
   push 0                  ; dwFlagsAndAttributes = 0
@@ -65,7 +66,7 @@ _loadPixelInfo:
   push 0                  ; lpNumberOfBytesRead
   push BMP_HEADER_SIZE    ; nNumberOfBytesToRead
   push eax                ; lpBuffer
-  push dword fileHandle         ; hFile (saved handle)
+  push dword fileHandle   ; hFile (saved handle)
   call _ReadFile@20
   test eax, eax
   jz _fail
