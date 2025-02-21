@@ -150,14 +150,14 @@
     <NASM Include="math.asm">
       <FileType>CppCode</FileType>
     </NASM>
+    <NASM Include="os.asm">
+      <FileType>CppCode</FileType>
+    </NASM>
   </ItemGroup>
   <ItemGroup>
     <NASM Include="main.asm">
       <FileType>Document</FileType>
     </NASM>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="H:\Downloads 4\ye.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

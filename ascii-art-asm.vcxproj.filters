@@ -32,10 +32,8 @@
     <NASM Include="math.asm">
       <Filter>Source Files</Filter>
     </NASM>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="H:\Downloads 4\ye.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <NASM Include="os.asm">
+      <Filter>Source Files</Filter>
+    </NASM>
   </ItemGroup>
 </Project>

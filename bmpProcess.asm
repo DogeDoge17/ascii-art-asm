@@ -59,7 +59,6 @@ _loadPixelInfo:
   ; -- LOAD BMP HEADER
   push BMP_HEADER_SIZE ; size of BmpHeader
   call _malloc
-  add esp, 4
   mov bmpHeader, eax
 
   push 0                  ; lpOverlapped = NULL
@@ -74,7 +73,6 @@ _loadPixelInfo:
   ; -- LOAD DIP HEADER
   push DIB_HEADER_SIZE ; size of BmpHeader
   call _malloc
-  add esp, 4
   mov dipHeader, eax
 
   push 0                  ; lpOverlapped = NULL
@@ -96,7 +94,6 @@ _loadPixelInfo:
   push eax
   push eax
   call _malloc
-  add esp, 4
   test eax, eax
   jz _fail
   mov pixelData, eax
