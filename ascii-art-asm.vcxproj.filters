@@ -15,11 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <NASM Include="main.asm">
       <Filter>Source Files</Filter>
     </NASM>
@@ -35,5 +30,10 @@
     <NASM Include="os.asm">
       <Filter>Source Files</Filter>
     </NASM>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="philly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

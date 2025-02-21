@@ -12,9 +12,7 @@ global _main
 section .data
 
 ; const char*
-msg db "hello world",0
 noArgsErr db "Not enough args. Please include the path to bitmap", 0
-clipBoardPrompt db "Copy to clipboard? (Y/n) ", 0
 
 section .text
 
@@ -30,11 +28,7 @@ _main:
 		push -1
 		call _ExitProcess@4
 
-.yesArgs:
-	push msg
-	call _puts	
-	add esp, 4
-
+.yesArgs:	
 
 	mov ebx, [ebp + 12]
 	mov esi, [ebx + 4]
@@ -43,21 +37,21 @@ _main:
 	call _generateArt
 
 	push ebp
-  mov ebp, esp
-  sub esp, 8
+    mov ebp, esp
+    sub esp, 8
 	mov [ebp - 4], ebx
 	mov [ebp - 8], eax
-  %define bmpHeader [ebp - 8]
+	%define outputData [ebp - 8]
+	%define outputLen [ebp - 8]
 
-	push clipBoardPrompt
-	call _puts
-	add esp, 4
 
 	;call _getchar
+	push dword outputData
+	push dword outputLen
 	call _copyToClipboard
 
-  mov esp, ebp
-  pop ebp
+	mov esp, ebp
+	pop ebp
 
 	push 0
 	call _ExitProcess@4
