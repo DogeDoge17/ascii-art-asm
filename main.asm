@@ -45,10 +45,7 @@ _main:
 	%define outputLen [ebp - 8]
 
 
-	;call _getchar
-	push dword outputData
-	push dword outputLen
-	call _copyToClipboard
+
 
 	mov esp, ebp
 	pop ebp
